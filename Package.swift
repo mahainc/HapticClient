@@ -13,7 +13,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/pointfreeco/swift-composable-architecture.git",
-            branch: "main"
+            from: "1.25.5"
         ),
     ],
     targets: [
@@ -29,6 +29,10 @@ let package = Package(
                 .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
                 "HapticClient",
             ]
+        ),
+        .testTarget(
+            name: "HapticClientTests",
+            dependencies: ["HapticClient"]
         ),
     ]
 )
